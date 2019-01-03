@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="UTF-8">
+<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<link rel="stylesheet" href="{{ site.baseurl }}/css/general.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/css/markup.css">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.content %}{{ page.content | strip_html | truncatewords:30 }}{{
+}}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{
+}}{% if page.id %}
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/{{ page.id | remove: '/' }}/thumbnail.jpeg">{{
+}}{% endif %}
+</head>
+<body>
+<header class="site-header">
+<h1>
+<a class="site-title" href="{{ site.baseurl }}/" title="{{ site.title }}" rel="home">{{ site.title }}</a>
+</h1>
+</header>
+<div role="main">
+{{ content }}
+</div>
+</body>
+</html>

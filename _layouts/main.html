@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<ul class="entries">
+{% for post in site.posts %}
+<li>
+<div>
+<a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+</div>
+<div>
+<time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+</div>
+</li>
+{% endfor %}
+</ul>
