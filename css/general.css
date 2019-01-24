@@ -1,6 +1,6 @@
 html {
 	background-color: #ffffff;
-	color: #333333;
+	color: #303030;
 	font: normal 14px sans-serif;
 }
 
@@ -73,7 +73,7 @@ code {
 }
 
 pre code {
-	color: #333333;
+	color: #303030;
 	font-size: 1em;
 }
 
@@ -117,7 +117,16 @@ img {
 }
 
 .site-title {
-	color: #333333;
+	color: #303030;
+}
+
+.site-footer {
+	text-align: right;
+	color: #808080;
+}
+
+.site-footer a {
+	color: #303030;
 }
 
 .entries {
