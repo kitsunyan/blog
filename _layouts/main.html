@@ -2,8 +2,7 @@
 layout: default
 ---
 <ul class="entries">
-{% for post in site.posts %}
-<li>
+{% for post in site.posts %}{% unless post.hidden %}<li>
 <div>
 <a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
 </div>
@@ -11,5 +10,4 @@ layout: default
 <time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
 </div>
 </li>
-{% endfor %}
-</ul>
+{% endunless %}{% endfor %}</ul>

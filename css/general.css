@@ -18,6 +18,10 @@ p, blockquote, ol, ul, h1, h2, h3, h4, h5, h6 {
 
 pre {
 	margin: 0.5em 0;
+	padding: 0.75em;
+	border-radius: 0.25em;
+	border: 1px solid #c0c0c0;
+	background: #f8f8f8;
 }
 
 h1 {
@@ -145,6 +149,7 @@ img {
 
 .entry-title {
 	font-weight: bold;
+	color: #303030;
 }
 
 .post-date {

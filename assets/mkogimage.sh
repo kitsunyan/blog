@@ -2,5 +2,6 @@
 
 w=1200
 h=630
-convert "$1" -resize ${w}x${h}\^ -quality 70 "$2" &&
-exiftool -overwrite_original -all= "$2"
+og='thumbnail.jpeg'
+convert "$1" -resize ${w}x${h}\^ -quality 70 "$og" &&
+exiftool -overwrite_original -all= "$og"
