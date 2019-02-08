@@ -7,7 +7,7 @@ layout: default
 <a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
 </div>
 <div>
-<time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+<time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
 </div>
 </li>
 {% endunless %}{% endfor %}</ul>

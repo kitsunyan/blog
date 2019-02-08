@@ -18,6 +18,10 @@ efficient. In this post I'd like to describe how I increased the efficiency of c
 the most safe and durable way, adjusted 8th gen CPU I have (i7-8650U) in my ThinkPad, and then show
 some insane benchmarks.
 
+**Update, {% include date.md date='08-02-2019' %}.** It appears that my first attempt of applying
+liquid metal wasn't good enough which led to high spread of core temperatures. I reapplied the
+liquid metal and updated some plots and screenshots.
+
 # Applying the Liquid Metal
 
 Liquid metals are much more efficient than regular thermal paste in terms of thermal conductivity.
@@ -148,7 +152,7 @@ I tried to run several benchmarks and got surprising results. I hit 11619 in Pas
 Test 9 (screenshot 1) while the average result for i7-8650U is [8834]{{
 }}(https://www.cpubenchmark.net/cpu.php?id=3070). I also got 5781 single-core score and 19047
 multi-core score in [Geekbench 4](https://browser.geekbench.com/v4/cpu/11842216) (screenshot 2).
-At the first Cinebench R15 run I hit 852 (screenshot 3)!
+At the first Cinebench R15 run I hit 880 (screenshot 3)!
 
 {% include asset-preview.md name='bench-passmark' ext='png' count=3
 alt='PassMark Performance Test 9' %}{{
@@ -157,18 +161,25 @@ alt='Geekbench 4' %}{{
 }}{% include asset-preview.md name='bench-cinebench' ext='png' count=3
 alt='Cinebench R15' %}
 
-I tried to run Cinebench 20 times in a row and look at how the result will change after multiple
-runs. The graph below represents the results. After multiple runs the result is dropped to 765 due
-to thermal throttling, which is exprected since power limit doesn't take effect anymore.
+I tried to run Cinebench 30 times in a row and look at how the result will change after multiple
+runs. The plots of result, frequency, power, and temperature versus time are presented below. After
+multiple runs the result is dropped to 805 due to thermal throttling, which is expected since power
+limit doesn't take effect anymore.
 
-{% include asset-preview.md name='graph-cinebench' ext='png'
-alt='Cinebench R15 20 runs' %}
+{% include asset-preview.md name='graph-cinebench-result' ext='png'
+alt='Plot of result versus time during 30 Cinebench R15 runs' %}{{
+}}{% include asset-preview.md name='graph-cinebench-frequency' ext='png'
+alt='Plot of frequency versus time during 30 Cinebench R15 runs' %}{{
+}}{% include asset-preview.md name='graph-cinebench-power' ext='png'
+alt='Plot of power versus time during 30 Cinebench R15 runs' %}{{
+}}{% include asset-preview.md name='graph-cinebench-temperature' ext='png'
+alt='Plot of temperature versus time during 30 Cinebench R15 runs' %}
 
 ## Stress Test
 
 I ran stress test (`stress-ng -c 8`) and measured the CPU frequency, power consumption, and
-temperatures during the test. The plots of frequency/power/temperature versus time are presented
-below.
+temperatures during the test. The plots of frequency, power, and temperature versus time are
+presented below.
 
 {% include asset-preview.md name='graph-stress-frequency' ext='png'
 alt='Plot of frequency versus time during stress test' %}{{
@@ -177,7 +188,7 @@ alt='Plot of power versus time during stress test' %}{{
 }}{% include asset-preview.md name='graph-stress-temperature' ext='png'
 alt='Plot of temperature versus time during stress test' %}
 
-This test manifests that power consumption drops to 28 W while CPU frequency drops to 3.4-3.5 GHz
+This test manifests that power consumption drops to 35-36 W while CPU frequency drops to 3.7-3.8 GHz
 under continuous full load.
 
 ## Linux Compilation
@@ -209,8 +220,8 @@ user 145m 51.435s
 sys   14m 35.756s
 ```
 
-Building the package took 25 minutes and 55 seconds. The plots of frequency/power/temperature versus
-time are presented below.
+Building the package took 25 minutes and 55 seconds. The plots of frequency, power, and temperature
+versus time are presented below.
 
 {% include asset-preview.md name='graph-linux-97-frequency' ext='png'
 alt='Plot of frequency versus time during kernel compilation' %}{{
@@ -222,7 +233,8 @@ alt='Plot of temperature versus time during kernel compilation' %}
 Under regular heavy workload CPU is able to work at 3.5-3.8 GHz consuming 30-35 W at the same time.
 
 After reducing the temperature limit to 90°C, the building process took slightly more time: 26
-minutes and 23 seconds. The plots of frequency/power/temperature versus time are presented below.
+minutes and 23 seconds. The plots of frequency, power, and temperature versus time are presented
+below.
 
 ```bash
 real  26m 23.330s
