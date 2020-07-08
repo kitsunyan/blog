@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
 <link rel="stylesheet" href="{{ site.baseurl }}/css/general.css">
 <link rel="stylesheet" href="{{ site.baseurl }}/css/markup.css">
 <meta property="og:site_name" content="{{ site.title }}">

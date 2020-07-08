@@ -1,6 +1,9 @@
 title: Foxy Blog
 github: kitsunyan
+author: kitsunyan
 email: kitsunyan@airmail.cc
 language: en_US
 permalink: none
 markdown: kramdown
+plugins:
+  - jekyll-feed
